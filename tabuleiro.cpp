@@ -23,7 +23,7 @@ int chr_to_int(char chr)
 Tabuleiro::Tabuleiro()
 {
   //lê do arquivo a configuração inicial do jogo
-  char line[82];
+  char line[83];
   FILE* file = fopen("jogos", "r");
 
   //o arquivo de jogos tem 150 configurações iniciais disponíveis
