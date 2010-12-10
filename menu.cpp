@@ -13,6 +13,7 @@ void Menu::mostrar()
 {
   cout << "########################################################################################################################################" << endl;
   cout << "Faça sua jogada digitando respectivamente, a linha, a coluna e o número que quer colocar. Ex.: 1 2 9 -> linha 1, coluna 2, numero 9" << endl;
+  cout << "Digite apenas 'z' para DESFAZER, ou 'r' para REFAZER" << endl;
   cout << "########################################################################################################################################" << endl << endl;
 }
 
