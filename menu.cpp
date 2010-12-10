@@ -17,6 +17,10 @@ void Menu::mostrar()
   cout << "########################################################################################################################################" << endl << endl;
 }
 
+/*
+* Trata a entrada do teclado.
+*/
+
 void Menu::trata_entrada(string entrada)
 {
   istringstream ins;
@@ -47,6 +51,9 @@ void Menu::trata_entrada(string entrada)
   }
 }
 
+/*
+* Valida a entrada na célula
+*/
 bool Menu::validate_entrada(int linha, int coluna, int numero)
 {
   bool valid = true;

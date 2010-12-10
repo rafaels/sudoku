@@ -6,7 +6,10 @@
 
 using namespace std;
 
-//retorna um número entre 0 e o parâmetro max - 1
+/*
+* Retorna um número entre 0 e o parâmetro max - 1
+*/
+
 int random(int max)
 {
   srand((unsigned)time(NULL));
@@ -14,11 +17,23 @@ int random(int max)
   return int((double(rand())/RAND_MAX)*max);
 }
 
-//retorna o inteiro de um char
+/*
+* Retorna o inteiro de um char
+*/
+
 int chr_to_int(char chr)
 {
   return (int)chr - 48;
 }
+
+/*
+* Abre o arquivo "jogos" que contém possui 150 linhas e cada linha um jogo diferente.
+* Escolhe randomicamente a linha que contém o jogo com o método "random".
+* Lê a linha selecionnada. Cria os objetos de Grupo.
+* Cria cada célula de acordo com o jogo escolhido, ou seja, se a célula não for
+* vazia é criada como célula fixa.
+* Associa cada célula ao seu grupo.
+*/
 
 Tabuleiro::Tabuleiro()
 {
@@ -29,7 +44,7 @@ Tabuleiro::Tabuleiro()
   //o arquivo de jogos tem 150 configurações iniciais disponíveis
   int line_number = random(150);
 
-  //lê linhas até ler a linha sorteada
+  //lê linhas até a linha sorteada
   for (int i = 0; i <= line_number; i++) {
     fgets(line, sizeof(line), file);
   }
@@ -47,10 +62,10 @@ Tabuleiro::Tabuleiro()
   for (int i = 0; i < 81; i++) {
     valor_nova_celula = chr_to_int(line[i]);
 
-    //se a célula não for vazia, cria ela como fixa
+    //se a célula não for vazia, cria como fixa
     if (valor_nova_celula) {
       nova_celula = new Celula(valor_nova_celula);
-    } else { //senão, cria como mutável
+    } else { //senÃ£o, cria como mutÃ¡vel
       nova_celula = new Celula();
     }
 
@@ -66,11 +81,15 @@ Tabuleiro::Tabuleiro()
   }
 }
 
+/*
+* O tabuleiro está resolvido quando todos os Grupos (quadrados, colunas e linhas)
+* também estiverem resolvidos. Aplica o método "is_solved" a cada grupo.
+*/
+
 bool Tabuleiro::is_solved()
 {
   bool solved = true;
 
-  //o tabuleiro está resolvido quando todos os quadrados, colunas e linhas estiverem também
   int i = 0;
   while(solved && i < 9) {
     solved = solved && linhas[i]->is_solved() &&
@@ -88,7 +107,10 @@ Celula * Tabuleiro::get_celula(int linha, int coluna)
   return linhas[linha]->get_celula(coluna);
 }
 
-//imprime com base nos quadrados
+/*
+* Imprime o tabuleiro com base nos quadrados
+*/
+
 void Tabuleiro::imprime_tabuleiro()
 {
   for (int i = 0; i < 3; i++){

@@ -1,3 +1,7 @@
+/*
+* Pilha que armazena as jogadas.
+*/
+
 class PilhaDeJogadas {
   private:
     Jogada * jogadas;

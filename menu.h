@@ -1,3 +1,8 @@
+/*
+* Apresenta as mensagens ao jogador.
+* Valida a entrada do teclado e o valor da célula.
+*/
+
 class Menu {
   private:
     Jogo * jogo;

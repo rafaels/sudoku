@@ -1,3 +1,9 @@
+/*
+* O Tabuleiro é o conjunto total das células e dos grupos.
+* Tem o total de 81 células, 9 colulas, 9 linhas e 9 quadrados.
+* Seleciona o jogo, mostra e verifica se está resolvido.
+*/
+
 #include "grupo.cpp"
 
 class Tabuleiro {
