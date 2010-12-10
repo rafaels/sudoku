@@ -83,6 +83,11 @@ bool Tabuleiro::is_solved()
   return solved;
 }
 
+Celula * Tabuleiro::get_celula(int linha, int coluna)
+{
+  return linhas[linha]->get_celula(coluna);
+}
+
 //imprime com base nos quadrados
 void Tabuleiro::imprime_tabuleiro()
 {
@@ -98,14 +103,5 @@ void Tabuleiro::imprime_tabuleiro()
     }
     cout << endl;
   }
-}
-
-//criando um tabuleiro novo e imprimindo ele, apenas para ver funcionar
-int main (int argc, char const* argv[])
-{
-  Tabuleiro * tabuleiro = new Tabuleiro();
-  tabuleiro->imprime_tabuleiro();
-
-  return 0;
 }
 

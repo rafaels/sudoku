@@ -9,5 +9,6 @@ class Tabuleiro {
   public:
     Tabuleiro();
     bool is_solved();
+    Celula * get_celula(int linha, int coluna);
     void imprime_tabuleiro();
 };
